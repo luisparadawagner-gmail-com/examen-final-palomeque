@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
 
-  constructor() { }
+  constructor(private httpCliente : HttpClient) { }
+
+  getNoticia(): Observable<any>{
+    return this.httpCliente.get('./../assets/noticia.json'); 
+  }
+
+  
+
 }

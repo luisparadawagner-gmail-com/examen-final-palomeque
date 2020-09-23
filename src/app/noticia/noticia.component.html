@@ -1,0 +1,35 @@
+<h1>Formulario de Noticias</h1>
+
+<form [formGroup]= 'formNoticia'>
+    <div class="datosNoticia">
+
+        <mat-form-field appearence="outline">
+            <mat-label>Titulo</mat-label>
+            <input matInput type="text" formControlName="titulo">
+        </mat-form-field>
+
+        <mat-form-field appearence="outline">
+            <mat-label>Texto</mat-label>
+            <textarea matInput type="text" formControlName="texto">Texto</textarea>
+        </mat-form-field>
+
+        <mat-form-field appearence="outline">
+            <mat-label>Fecha de Publicacion</mat-label>
+            <input matInput type="date" formControlName="fechaDePublicacion">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Estado</mat-label>
+            <mat-select matNativeControl required formControlName="estado">
+              <mat-option value="Publicada">Publicada</mat-option>
+              <mat-option value="No Publicada">No Publicada</mat-option>
+            </mat-select>
+            <input matInput type="text" formControlName="estado">
+          </mat-form-field>
+       
+
+    </div>
+
+    <button mat-raised-button (click)="enviar()">Enviar</button>
+    
+</form>
